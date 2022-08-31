@@ -1,0 +1,10 @@
+# vs code
+**/.vsstudio
+
+# mac
+**/.DS_Store
+
+# es data
+elasticsearch/esdata01/
+# kibana data
+kibana/data/
