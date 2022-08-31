@@ -1,0 +1,14 @@
+#
+# ** THIS IS AN AUTO-GENERATED FILE **
+#
+
+# Default Kibana configuration for docker target
+server.host: "0.0.0.0"
+server.publicBaseUrl: http://localhost:5601
+server.shutdownTimeout: "5s"
+# elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+monitoring.ui.container.elasticsearch.enabled: true
+
+xpack.reporting.roles.enabled: false
+#配置中文语言界面
+i18n.locale: "zh-CN"
