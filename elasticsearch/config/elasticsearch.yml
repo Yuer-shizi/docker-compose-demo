@@ -1,7 +1,8 @@
 cluster.name: "docker-cluster"
 network.host: 0.0.0.0
 
-discovery.type: single-node #以单一节点模式启动
+#以单一节点模式启动
+discovery.type: single-node
 # 是否支持跨域
 http.cors.enabled: true
 # 表示支持所有域名
