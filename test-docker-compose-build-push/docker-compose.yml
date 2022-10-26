@@ -1,0 +1,14 @@
+version: '3'
+services:
+  service:
+    image: "harbor.hubenergy.cn:5443/${HARBOR_SPACE}/${APP_NAME}:${VERSION}"
+    build:
+      context: .
+    env_file:
+      - .env
+      # - .env.$ENV_PROFILE 不能覆盖 .env 的值
+    ports:
+      - "${PORT}:80"
+    container_name: ${APP_NAME}-${ENV_PROFILE}
+    restart: always
+
