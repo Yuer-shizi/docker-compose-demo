@@ -12,8 +12,8 @@ services:
         environment:
           SERVER_NAME: kibana
           ELASTICSEARCH_HOSTS: http://elasticsearch:9200
-          ELASTICSEARCH_USERNAME: elastic
-          ELASTICSEARCH_PASSWORD: linkgap
+#          ELASTICSEARCH_USERNAME: elastic
+#          ELASTICSEARCH_PASSWORD: linkgap
           # ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES: /usr/share/kibana/certs/http_ca.crt
         ports:
           - "5601:5601"

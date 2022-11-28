@@ -1,0 +1,11 @@
+version: '3'
+services:
+  service:
+    env_file: .env
+    build:
+      context: .
+    image: "harbor.hubenergy.cn:5443/${HARBOR_SPACE}/${APP_NAME}:${VERSION}"
+    container_name: ${APP_NAME}-${ENV_PROFILE}
+    restart: always
+    ports:
+      - "${PORT}:80"

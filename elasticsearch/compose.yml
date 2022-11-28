@@ -18,7 +18,7 @@ services:
     volumes:
       - ./esdata01:/usr/share/elasticsearch/data
       - ./plugins:/usr/share/elasticsearch/plugins
-#      - ./config:/usr/share/elasticsearch/config
+      - ./config:/usr/share/elasticsearch/config
     networks:
       elastic:
     deploy:
