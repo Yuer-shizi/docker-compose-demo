@@ -1,0 +1,21 @@
+version : '3'
+services:
+  mysql:
+    image: mysql:5.7
+    # 容器名(以后的控制都通过这个)
+    container_name: mysql-13954
+    # 重启策略
+    restart: always
+    volumes:
+      # 挂挂载配置文件
+      - ./conf/my.cnf:/etc/my.cnf
+      # 挂载日志
+      - ./logs:/var/log/mysql
+      # 挂载数据
+      - ./data:/var/lib/mysql
+    environment:
+      # root 密码
+      MYSQL_ROOT_PASSWORD: 123456
+      TZ: Asia/Shanghai
+    ports:
+      - "13954:3306"
