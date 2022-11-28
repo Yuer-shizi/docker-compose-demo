@@ -4,6 +4,8 @@ services:
     image: mysql:5.7
     # 容器名(以后的控制都通过这个)
     container_name: mysql-13954
+    # 有的文件依赖 hostname，最好配置
+    hostname: ${container_name}
     # 重启策略
     restart: always
     volumes:
