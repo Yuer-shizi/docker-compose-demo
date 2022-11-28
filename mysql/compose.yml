@@ -5,9 +5,11 @@ services:
     # 容器名(以后的控制都通过这个)
     container_name: mysql-13954
     # 有的文件依赖 hostname，最好配置
-    hostname: ${container_name}
+    hostname: mysql-13954
     # 重启策略
     restart: always
+    # 容器内的 root 拥有物理机的 root 权限
+    privileged: true
     volumes:
       # 挂挂载配置文件
       - ./conf/my.cnf:/etc/my.cnf
