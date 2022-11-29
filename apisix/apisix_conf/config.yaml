@@ -16,7 +16,11 @@
 #
 
 apisix:
-  node_listen: 6666             # APISIX listening port
+  node_listen: 80             # APISIX listening port
+#  ssl:
+#    enable: true
+#    listen_port:
+#      - 443
   enable_ipv6: false
 
   allow_admin:                  # http://nginx.org/en/docs/http/ngx_http_access_module.html#allow
@@ -32,7 +36,7 @@ apisix:
 #     key: 4054f7cf07e344346cd3f287985e76a2
       key: Linkgapviewer
       role: viewer
-  
+
   enable_control: true
   control:
     ip: "0.0.0.0"
@@ -44,8 +48,8 @@ etcd:
   prefix: "/apisix"               # apisix configurations prefix
   timeout: 30                     # 30 seconds
 
-plugin_attr:
-  prometheus:
-    export_addr:
-      ip: "0.0.0.0"
-      port: 6091
+#plugin_attr:
+#  prometheus:
+#    export_addr:
+#      ip: "0.0.0.0"
+#      port: 6091
