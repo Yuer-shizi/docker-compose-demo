@@ -1,0 +1,22 @@
+version: '3'
+services:
+  redis:
+    image: redis:7.0
+    restart: always
+    hostname: redis
+    container_name: redis
+    privileged: true
+    ports:
+      - "6379:6379"
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - ./data:/data
+      - ./conf/redis.conf:/etc/redis/redis.conf
+      - ./logs:/logs
+    command: redis-server /etc/redis/redis.cnf
+    # 去除 WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+    sysctls:
+      net.core.somaxconn: 1024
+      vm.overcommit_memory: 1
+
