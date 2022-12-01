@@ -1,7 +1,7 @@
 version: '3'
 services:
   nacos:
-    image: nacos/nacos-server:2.1.2
+    image: nacos/nacos-server:v2.1.2
     container_name: nacos-standalone-mysql
     hostname: nacos
     restart: always
@@ -20,9 +20,12 @@ services:
       - ./logs/:/home/nacos/logs
 #      - ./conf/custom.properties:/home/nacos/init.d/custom.properties
     ports:
+      # web 端口
       - "8848:8848"
-#      - "9848:9848"
-#      - "9555:9555"
+      # 客户端gRPC请求服务端端口 = web 端口 + 1000，用于客户端向服务端发起连接和请求
+      #- "9848:9848"
+      # 服务端gRPC请求服务端端口 = web 端口 + 1001，用于服务间同步等
+      #- "9555:9555"
     networks:
       yace:
 networks:
