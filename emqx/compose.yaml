@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  emqx:
+    image: emqx:5.0
+    container_name: emqx
+    restart: always
+    environment:
+      - "EMQX_NODE__COOKIE=emqx-cookie"
+#      - "EMQX_HOST=localhost"
+    ports:
+      - "1883:1883"
+      - "18083:18083"
+    healthcheck:
+      test: ["CMD", "/opt/emqx/bin/emqx_ctl", "status"]
+      interval: 5s
+      timeout: 25s
+      retries: 5
+    networks:
+      emqx-bridge:
+
+networks:
+  emqx-bridge:
+    driver: bridge
