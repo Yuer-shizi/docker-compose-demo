@@ -1,0 +1,32 @@
+version: '3'
+services:
+  cassandra:
+    image: cassandra:3.11
+    environment:
+      CASSANDRA_START_RPC: true
+    volumes:
+      - "./cassandra/data:/var/lib/cassandra"
+      #- "./cassandra/cassandra.yaml:/etc/cassandra/cassandra.yaml"
+    container_name: cassandra
+    restart: always
+    networks:
+      - kairosdb-cassandra
+
+  kairosdb:
+    # kairosdb官方jdk
+    image: openjdk:8u342-slim-buster
+    depends_on:
+      - cassandra
+    volumes:
+      - "./kairosdb:/kairosdb"
+    container_name: kairosdb
+    hostname: kairosdb
+    command: /bin/bash -c "/kairosdb/bin/kairosdb.sh run"
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      - kairosdb-cassandra
+networks:
+  kairosdb-cassandra:
+    driver: bridge
