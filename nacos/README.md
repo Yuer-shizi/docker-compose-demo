@@ -1,6 +1,8 @@
 ## 参考文档
 [nacos-docker 项目](https://github.com/nacos-group/nacos-docker/blob/v2.1.2/README_ZH.md)
 
+[镜像内的配置文件](https://github.com/nacos-group/nacos-docker/blob/v2.1.2/build/conf/application.properties)
+
 ## 使用教程
 ### 初始化数据库
 1。创建数据库

@@ -22,4 +22,4 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
       TZ: Asia/Shanghai
     ports:
-      - "13954:3306"
+      - "3306:3306"

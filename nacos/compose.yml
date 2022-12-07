@@ -9,6 +9,7 @@ services:
       MODE: standalone
       # 支持IP还是域名模式
       PREFER_HOST_MODE: hostname
+#      NACOS_APPLICATION_PORT: 8848
       SPRING_DATASOURCE_PLATFORM: mysql
       MYSQL_SERVICE_HOST: mysql
       MYSQL_SERVICE_DB_NAME: nacos_conf

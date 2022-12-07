@@ -8,6 +8,8 @@ services:
     environment:
       - "EMQX_NODE__COOKIE=emqx-cookie"
 #      - "EMQX_HOST=localhost"
+#      - "EMQX_DASHBOARD__DEFAULT_USERNAME=admin"
+#      - "EMQX_DASHBOARD__DEFAULT_PASSWORD=public"
     ports:
       - "1883:1883"
       - "18083:18083"
